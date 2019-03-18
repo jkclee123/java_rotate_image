@@ -25,13 +25,12 @@ public class Main {
         if (height >= width){
             return  inputImg;
         }
-        double ratio = height * 1.0 / width;
 
         double angle = Math.toRadians(-90);
         double sin = Math.sin(angle);
         double cos = Math.cos(angle);
         double x0 = 0.5 * (height - 1);     // point to rotate about
-        double y0 = 0.5 * ratio * (width - 1);     // center of image
+        double y0 = 0.5 * (height - 1);     // center of image
 
         WritableRaster inRaster = inputImg.getRaster();
         BufferedImage outputImg = new BufferedImage(height, width, BufferedImage.TYPE_INT_RGB);
